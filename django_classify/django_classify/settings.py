@@ -25,7 +25,7 @@ SECRET_KEY = '^fxf7f&2$p(o=fnd(bdlnj5cdh+y2*4a#7lk3r6mlon!v_*wuj'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [dmsearch.herokuapp.com]
 
 
 # Application definition
