@@ -3,3 +3,4 @@ pandas==0.24.1
 Django==2.1.7
 nltk==3.4
 scikit_learn==0.20.3
+gunicorn
