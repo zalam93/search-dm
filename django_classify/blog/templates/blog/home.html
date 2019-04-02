@@ -1,19 +1,68 @@
 {% extends "blog/base.html" %}
 {% block content %}
-    {% for post in posts %}
+{% load static %}
     <article class="media content-section">
   <div class="media-body">
     <div class="article-metadata">
-      <a class="mr-2" href="#">{{ post.Class}}</a>
-      <small class="text-muted">{{ post.Title}} </small>
+      <a class="mr-2" href="#">Data Mining - Spring 2019</a>
+      <small class="text-muted">Project - Web Application </small>
     </div>
-    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-    <p class="article-content">{{post.Content}} , {{post.Project}} </p>
+    <h2><a class="article-title" href="#">Search Implementation</a></h2>
+    <p class="article-content">This page contents the search feature of the project using tf-idf </p>
   </div>
 </article>
 
-    {% for r in cc %}
-        <p> {{r.result}} </p>
+
+
+    {% if data %}
+    <table class="table table-sm">
+  <thead>
+    <tr class=table-active>
+      <th scope="col">Company</th>
+      <th scope="col">Company Logo</th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for i in data %}
+        {% for val in i.company %}
+
+    <tr class=valign="middle">
+        <td align="center"><h5>{{val}} </h5></td>
+        {% if val == "amazon" %}
+        <td><img  width=100 src="{% static "blog/amazon.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+        {% if val == "apple" %}
+        <td><img  width=100 src="{% static "blog/apple.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+        {% if val == "AirBnb" %}
+        <td><img  width=100 src="{% static "blog/AirBnb.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                {% if val == "google" %}
+        <td><img  width=100 src="{% static "blog/google.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                        {% if val == "IBM" %}
+        <td><img  width=100 src="{% static "blog/IBM.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                               {% if val == "microsoft" %}
+        <td><img  width=100 src="{% static "blog/microsoft.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                                       {% if val == "facebook" %}
+        <td><img  width=100 src="{% static "blog/facebook.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                                       {% if val == "netflix" %}
+        <td><img  width=100 src="{% static "blog/netflix.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                                            {% if val == "Deloitte" %}
+        <td><img  width=100 src="{% static "blog/Deloitte.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+
+
+
+    </tr>
+
+        {% endfor %}
     {% endfor %}
-    {%  endfor %}
+  </tbody>
+</table>
+    {% endif %}
 {% endblock content%}
