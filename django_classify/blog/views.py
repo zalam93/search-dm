@@ -1,11 +1,13 @@
 from django.shortcuts import render
+from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
+from django.template import Context
 # Create your views here.
 from utils.app import *
 
 
-posts = [
+'''posts = [
 
     {
         'Class': 'Data Mining Spring 2019',
@@ -15,20 +17,28 @@ posts = [
     }
 
 
-]
+]'''
 
 
 def home(request):
-    context = {
-        'posts': posts
-    }
+
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        message.success(request)
-        return redirect('blog-home')
+        query = request.POST['query']
+        result = index(query)
+        result = result.split()
+        data = [
+            {
+                'company': result
+
+            }]
+
+        context = {
+            'data': data
+        }
+        return render(request, 'blog/home.html', context)
     else:
         form = UserCreationForm()
-    return render(request, 'blog/home.html', context)
+    return render(request, 'blog/home.html')
 
 
 def output(request):
@@ -36,11 +46,8 @@ def output(request):
         print(request.POST)
         query = request.POST['query']
         result = index(query)
-        print(result)
-        '''cc = {
-            'result': result
-        }'''
-        return HttpResponse('<h5>' + result + '</h5>')
+        context = Context({'company': result})
+    return render(request, 'blog/home.html', context)
 
 
 def about(request):
