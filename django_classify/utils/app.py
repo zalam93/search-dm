@@ -45,5 +45,5 @@ def index(Query):
         return data['Company'].iloc[sorted_indexes[0][-10:]]
 
     working = get_search_results(Query)
-    #working = working.drop_duplicates()
-    return working
+    working = set(working)
+    return ''.join(working)
