@@ -46,4 +46,4 @@ def index(Query):
 
     working = get_search_results(Query)
     working = working.unqiue()
-    return ' '.join(working)
+    return working
