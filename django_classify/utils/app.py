@@ -46,4 +46,4 @@ def index(Query):
 
     working = get_search_results(Query)
     working = set(working)
-    return working
+    return ' '.join(working)
