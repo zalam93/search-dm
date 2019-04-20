@@ -46,8 +46,8 @@ def output(request):
         print(request.POST)
         query = request.POST['query']
         result = index(query)
-        context = Context({'company': result})
-    return render(request, 'blog/home.html', context)
+        #context = Context({'company': result})
+    return render(request, 'blog/home.html', result)
 
 
 def about(request):
