@@ -44,7 +44,7 @@ def index(query):
         sorted_scores = sorted_indexes[0][num:]
         return company_indexes, sorted_scores
 
-    working, sorted_scores = get_search_results(query)
+    company, sorted_scores = get_search_results(query)
     scores = ','.join(str(i) for i in sorted_scores)
     scores = scores.split(',')
 
