@@ -25,17 +25,10 @@ def home(request):
     if request.method == 'POST':
         query = request.POST['query']
         result = index(query)
-        result = result.split()
-        data = [
-            {
-                'company': result
-
-            }]
-
-        context = {
+        '''context = {
             'data': data
-        }
-        return render(request, 'blog/home.html', context)
+        }'''
+        return render(request, 'blog/home.html', result)
     else:
         form = UserCreationForm()
     return render(request, 'blog/home.html')
