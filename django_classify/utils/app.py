@@ -39,20 +39,21 @@ def index(query):
         query_tfidf = tfidf_transformer.transform(query_matrix)
         sim_score = cosine_similarity(query_tfidf, train_tfidf)
         sorted_indexes = np.argsort(sim_score).tolist()
-        company_indexes = (dataset ['Company'].iloc[sorted_indexes[0][-10:]].drop_duplicates()).tolist()
+        company_indexes = (dataset['Company'].iloc[sorted_indexes[0][-10:]].drop_duplicates()).tolist()
         num = len(company_indexes) * -1
         sorted_scores = sorted_indexes[0][num:]
-        return company_indexes, sorted_scores
+        return company_indexes, sorted_scores, query_tfidf
 
-    company, sorted_scores = get_search_results(query)
-    scores = ','.join(str(i) for i in sorted_scores)
-    scores = scores.split(',')
+    company, sorted_scores, query_tfidf = get_search_results(query)
+    print(sorted_scores)
+    #scores = ','.join(str(i) for i in sorted_scores)
+    '''scores = scores.split(',')
 
     json = [{
         'scores': scores,
         'company': company
 
 
-    }]
+    }]'''
 
-    return json
+    return company, sorted_scores, query_tfidf
