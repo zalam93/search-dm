@@ -24,11 +24,9 @@ def home(request):
 
     if request.method == 'POST':
         query = request.POST['query']
-        result = index(query)
-        '''context = {
-            'data': data
-        }'''
-        return render(request, 'blog/home.html', result)
+        company, scores, query_tfidf = index(query)
+
+        return render(request, 'blog/home.html', {'data': zip(company, scores)})
     else:
         form = UserCreationForm()
     return render(request, 'blog/home.html')
@@ -39,7 +37,7 @@ def output(request):
         print(request.POST)
         query = request.POST['query']
         result = index(query)
-        #context = Context({'company': result})
+        # context = Context({'company': result})
     return render(request, 'blog/home.html', result)
 
 
