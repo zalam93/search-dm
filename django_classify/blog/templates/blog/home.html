@@ -14,19 +14,26 @@
 
 
 
+
     {% if data %}
+
+
+  {% for tfidf in query_tfidf %}
+   <p> {{tfidf}} </p>
+  {% endfor %}
+
     <table class="table table-sm">
   <thead>
     <tr class=table-active>
       <th scope="col">Company</th>
       <th scope="col">Company Logo</th>
+      <th scope="col">Cosine Similarity</th>
     </tr>
   </thead>
   <tbody>
-        {% for i in data %}
-        {% for val in i.company %}
+        {% for val,score in data %}
 
-    <tr class=valign="middle">
+      <tr class=valign="middle">
         <td align="center"><h5>{{val}} </h5></td>
         {% if val == "amazon" %}
         <td><img  width=100 src="{% static "blog/amazon.jpg" %}" alt="..." class="img-thumbnail"></td>
@@ -56,12 +63,9 @@
         <td><img  width=100 src="{% static "blog/Deloitte.png" %}" alt="..." class="img-thumbnail"></td>
         {% endif %}
 
-
-
-    </tr>
-
+        <td> {{score}} </td>
         {% endfor %}
-    {% endfor %}
+
   </tbody>
 </table>
     {% endif %}
