@@ -32,9 +32,12 @@ After uploading the web also check if you web dyno is set or not if not you need
 Removing the stop words from the data and converting all multiple white-space characters to single whitespace
 
                  
-         stop_words = stopwords.words('english')
-         feature = str(feature)
-         feature = re.sub('[^a-zA-Z\s]', '', feature)
-         feature = [w for w in feature.split() if w not in set(stop_words)]
-         return ' '.join(feature)
-    
+      stop_words = stopwords.words('english')
+      feature = str(feature)
+      feature = re.sub('[^a-zA-Z\s]', '', feature)
+      feature = [w for w in feature.split() if w not in set(stop_words)]
+      return ' '.join(feature)
+ Stemming the words altogether so that similar meaning words are not treated as separate words
+ 
+    english_stemmer = SnowballStemmer('english')
+    analyzer = CountVectorizer().build_analyzer()
