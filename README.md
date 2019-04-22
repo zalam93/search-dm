@@ -46,3 +46,7 @@ Removing the stop words from the data and converting all multiple white-space ch
  
        query_matrix = count.transform([query])
        query_tfidf = tfidf_transformer.transform(query_matrix)
+       
+ Cosine Similarity Scores to retrieve the top similar results'
+ 
+       sim_score = cosine_similarity(query_tfidf, train_tfidf)
