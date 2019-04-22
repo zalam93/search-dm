@@ -11,6 +11,6 @@
 **Web Application Link** https://dmsearch.herokuapp.com/
 The application is hosted on free hosting site heroku, the deployment is straight forward deploying the site from the github repository but you might get some errors which I encounter when uploading the website on the heroku server.
 
- git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
+    git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
 
 
