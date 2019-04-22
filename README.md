@@ -5,5 +5,6 @@
 **Example** user provides a query ("Good Health Benefits") will returns the name/logo of the company which provides better health benefits as compares to the other company in the dataset.
 
 **Dataset** has 17 fields where company and pros are the most important attribute for this search engine.
+![](django_classify/dataset.png)
 
 
