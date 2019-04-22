@@ -8,7 +8,7 @@
 ![](django_classify/dataset.png)
 
 
-### Deployment
+### Deployment:
 **Web Application Link** https://dmsearch.herokuapp.com/
 The application is hosted on free hosting site heroku, the deployment is straight forward deploying the site from the github repository but you might get some errors which I encounter when uploading the website on the heroku server.
 
@@ -27,5 +27,6 @@ After uploading the web also check if you web dyno is set or not if not you need
                                   
        web gunicorn django_classify.wsgi
        
-### Code
+### Code:
+
     
