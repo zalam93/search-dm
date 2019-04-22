@@ -39,8 +39,8 @@ Removing the stop words from the data and converting all multiple white-space ch
       return ' '.join(feature)
  Stemming the words altogether so that similar meaning words are not treated as separate words
  
-    english_stemmer = SnowballStemmer('english')
-    analyzer = CountVectorizer().build_analyzer()
+      english_stemmer = SnowballStemmer('english')
+      analyzer = CountVectorizer().build_analyzer()
     
  TF-IDF Calculation for the User's Query
  
