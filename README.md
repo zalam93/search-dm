@@ -17,8 +17,13 @@ The application is hosted on free hosting site heroku, the deployment is straigh
 
 Use the command below to download pip first if you don't have pip already install
 
-                                  $curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-                                  $python get-pip.py
+      $curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+      $python get-pip.py
 Then go to your project folder and then paste the following command to get your requirement.txt
                                   
-                                  $pip freeze > requirements.txt
+       $pip freeze > requirements.txt
+                                  
+After uploading the web also check if you web dyno is set or not if not you need to manually set it I used the following
+                                  
+       web gunicorn django_classify.wsgi
+    
