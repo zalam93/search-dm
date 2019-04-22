@@ -43,3 +43,6 @@ Removing the stop words from the data and converting all multiple white-space ch
     analyzer = CountVectorizer().build_analyzer()
     
  TF-IDF Calculation for the User's Query
+ 
+       query_matrix = count.transform([query])
+       query_tfidf = tfidf_transformer.transform(query_matrix)
