@@ -41,3 +41,5 @@ Removing the stop words from the data and converting all multiple white-space ch
  
     english_stemmer = SnowballStemmer('english')
     analyzer = CountVectorizer().build_analyzer()
+    
+ TF-IDF Calculation for the User's Query
