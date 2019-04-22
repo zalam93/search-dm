@@ -52,6 +52,7 @@ Removing the stop words from the data and converting all multiple white-space ch
        sim_score = cosine_similarity(query_tfidf, train_tfidf)
        
  ## Web Application
+ ![](django_classify/search-page.png)
        
  ## References
 https://medium.freecodecamp.org/how-to-process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3
