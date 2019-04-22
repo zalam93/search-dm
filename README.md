@@ -13,4 +13,10 @@
 The application is hosted on free hosting site heroku, the deployment is straight forward deploying the site from the github repository but you might get some errors which I encounter when uploading the website on the heroku server.
 
 
+1. The packages I include were not available directly to Heroku server therefore I had to create a requirement.txt file on the root directory of the project first using pip which will save all the packages required to successfully run the app on the server.
+
+  If you don't have pip then use the command below to download pip first:
+          curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+
+
   
