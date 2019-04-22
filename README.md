@@ -26,4 +26,6 @@ Then go to your project folder and then paste the following command to get your 
 After uploading the web also check if you web dyno is set or not if not you need to manually set it I used the following
                                   
        web gunicorn django_classify.wsgi
+       
+### Code
     
