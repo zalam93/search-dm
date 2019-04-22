@@ -27,6 +27,14 @@ After uploading the web also check if you web dyno is set or not if not you need
                                   
        web gunicorn django_classify.wsgi
        
-### Code:
+### Code (Search Engine):
 
+Removing the stop words from the data and converting all multiple white-space characters to single whitespace
+
+                 
+         stop_words = stopwords.words('english')
+         feature = str(feature)
+         feature = re.sub('[^a-zA-Z\s]', '', feature)
+         feature = [w for w in feature.split() if w not in set(stop_words)]
+         return ' '.join(feature)
     
