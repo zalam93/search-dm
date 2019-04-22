@@ -52,14 +52,12 @@ Removing the stop words from the data and converting all multiple white-space ch
        sim_score = cosine_similarity(query_tfidf, train_tfidf)
        
  ## References
- References
- 
-            https://medium.freecodecamp.org/how-to-process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3
+https://medium.freecodecamp.org/how-to-process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3
 
-            https://tow ardsdatascience.com/tfidf-for-piece-of-text-in-python-43feccaa74f8
+https://tow ardsdatascience.com/tfidf-for-piece-of-text-in-python-43feccaa74f8
 
-            https://github.com/Heetmadhu/Movie-Recommendation/blob/master/MovieSearch.ipynb
+https://github.com/Heetmadhu/Movie-Recommendation/blob/master/MovieSearch.ipynb
 
-            https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
 
 https://github.com/mohdkashif93/tf-idf-implementation
