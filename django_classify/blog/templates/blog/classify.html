@@ -1,0 +1,153 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% load static %}
+    <article class="media content-section">
+  <div class="media-body">
+
+    <h2><a class="article-title" href="#">Classification Implementation</a></h2>
+    <p class="article-content">This page contents the classification feature using multinomial naive bayes classifier</p>
+  </div>
+      <form method="POST" action="/classify">
+        {% csrf_token %}
+</article>
+
+    <article class="media content-section">
+  <div class="media-body">
+
+
+<div class="row">
+
+   <div class="col-sm-4">
+       <label> <b>  Workload Rating: </b>  </label>
+       <select name="workload">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+</div>
+   <div class="col-sm-4">
+       <label> <b>  Culture Rating: </b>  </label>
+       <select name="culture">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+</div>
+
+   <div class="col-sm-4">
+       <label> <b>  Growth Rating: </b>  </label>
+       <select name="growth">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+</div>
+</div>
+
+
+<div class="row">
+   <div class="col-sm-4">
+       <label> <b>  Benefits Rating: </b>  </label>
+       <select name="benefits">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+</select>
+</div>
+
+
+   <div class="col-sm-4">
+       <label> <b>  Company Rating: </b>  </label>
+       <select name="rating">
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+</select>
+</div>
+
+   <div class="col-sm-4">
+       <label> <b>  Management Rating: </b>  </label>
+       <select name="support"   >
+      <option value="0">0</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+</select>
+</div>
+</div>
+
+
+  </div>
+
+</article>
+
+<div style="text-align: center;">
+  <button id="btn" style="align:center;" name="btn" class="btn btn-info">Submit </button>
+</div>
+ </form>
+
+{% if data %}
+<p> Following company has been classified according to your selected inputs </p>
+    <table class="table table-sm">
+  <thead>
+    <tr class=table-active>
+      <th scope="col">Company</th>
+      <th scope="col">Company Logo</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+      <tr class=valign="middle">
+        <td align="center"><h5>{{data}} </h5></td>
+        {% if data == "Amazon" %}
+        <td><img  width=100 src="{% static "blog/amazon.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+        {% if data == "Apple" %}
+        <td><img  width=100 src="{% static "blog/apple.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+        {% if data == "AirBnb" %}
+        <td><img  width=100 src="{% static "blog/AirBnb.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                {% if data == "Google" %}
+        <td><img  width=100 src="{% static "blog/google.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                        {% if data == "IBM" %}
+        <td><img  width=100 src="{% static "blog/IBM.jpg" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                               {% if data == "Microsoft" %}
+        <td><img  width=100 src="{% static "blog/microsoft.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                                       {% if data == "Facebook" %}
+        <td><img  width=100 src="{% static "blog/facebook.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                                       {% if data == "Netflix" %}
+        <td><img  width=100 src="{% static "blog/netflix.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+                                            {% if data == "Deloitte" %}
+        <td><img  width=100 src="{% static "blog/Deloitte.png" %}" alt="..." class="img-thumbnail"></td>
+        {% endif %}
+
+
+  </tbody>
+</table>
+    {% endif %}
+
+{% endblock content%}
