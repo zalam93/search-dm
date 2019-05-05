@@ -32,14 +32,18 @@ def home(request):
     return render(request, 'blog/home.html')
 
 
-def output(request):
-    if request.method == "POST":
-        print(request.POST)
-        query = request.POST['query']
-        result = index(query)
-        # context = Context({'company': result})
-    return render(request, 'blog/home.html', result)
+def classify(request):
+    if request.method == 'POST':
+        rating = request.POST['rating']
+        workload = request.POST['workload']
+        culture = request.POST['culture']
+        growth = request.POST['growth']
+        benefits = request.POST['benefits']
+        support = request.POST['support']
 
-
-def about(request):
-    return render(request, 'blog/about.html')
+        query = rating + ',' + workload + ',' + culture + ',' + growth + ',' + benefits + ',' + support
+        company = index2(query)
+        return render(request, 'blog/classify.html', {'data': company})
+    else:
+        form = UserCreationForm()
+    return render(request, 'blog/classify.html')
