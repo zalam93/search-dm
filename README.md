@@ -73,12 +73,12 @@ After uploading the web also check if you web dyno is set or not if not you need
        
        
  ## References
-https://medium.freecodecamp.org/how-to-process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3
-https://towardsdatascience.com/tfidf-for-piece-of-text-in-python-43feccaa74f8
-https://github.com/Heetmadhu/Movie-Recommendation/blob/master/MovieSearch.ipynb
-https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
-https://github.com/mohdkashif93/tf-idf-implementation
-https://www.kaggle.com/rakeshrau/social-network-ads
-https://www.kaggle.com/ash316/ml-from-scratch-part-2
-https://towardsdatascience.com/na%C3%AFve-bayes-from-scratch-using-python-only-no-fancy-frameworks-a1904b37222d
+- https://medium.freecodecamp.org/how-to-process-textual-data-using-tf-idf-in-python-cd2bbc0a94a3
+- https://towardsdatascience.com/tfidf-for-piece-of-text-in-python-43feccaa74f8
+- https://github.com/Heetmadhu/Movie-Recommendation/blob/master/MovieSearch.ipynb
+- https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
+- https://github.com/mohdkashif93/tf-idf-implementation
+- https://www.kaggle.com/rakeshrau/social-network-ads
+- https://www.kaggle.com/ash316/ml-from-scratch-part-2
+- https://towardsdatascience.com/na%C3%AFve-bayes-from-scratch-using-python-only-no-fancy-frameworks-a1904b37222d
 
