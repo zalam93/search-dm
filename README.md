@@ -81,4 +81,5 @@ After uploading the web also check if you web dyno is set or not if not you need
 - https://www.kaggle.com/rakeshrau/social-network-ads
 - https://www.kaggle.com/ash316/ml-from-scratch-part-2
 - https://towardsdatascience.com/na%C3%AFve-bayes-from-scratch-using-python-only-no-fancy-frameworks-a1904b37222d
+- https://chrisalbon.com/machine_learning/naive_bayes/naive_bayes_classifier_from_scratch/
 
