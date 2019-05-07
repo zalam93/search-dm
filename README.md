@@ -1,4 +1,6 @@
-# JBolt Search Engine
+# JBolt Search,Classifier,Recommendation System
+
+# Search:
 
 **Jbolt Search Engine** is web application that currently has search engine feature based on TF-IDF algorithm where user is able to enter the contributes they would like there future company to have and the result will show the company with related attributes or environment.
 
@@ -64,3 +66,6 @@ https://github.com/Heetmadhu/Movie-Recommendation/blob/master/MovieSearch.ipynb
 https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
 
 https://github.com/mohdkashif93/tf-idf-implementation
+
+# Classifier
+
