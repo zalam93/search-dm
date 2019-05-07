@@ -71,6 +71,9 @@ Following are the two main steps in the Naive Bayes Algorithm
 ****Calculating variance****
  
      variance = data_var[col][data_var.index == name].values[0]
+****Calculating Likelihood****
+
+    p(\text{height}\mid\text{female})=\frac{1}{\sqrt{2\pi\text{variance of female height in the data}}}\,e^{ -\frac{(\text{observation’s height}-\text{average height of females in the data})^2}{2\text{variance of female height in the data}} }
 
 
  ## Deployment:
