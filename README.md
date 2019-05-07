@@ -74,7 +74,7 @@ Naive Bayes is a machine learning algorithm for classification problems. It is b
 ***P(h|d) = (P(d|h) * P(h)) / P(d)***
 
 ***f1,f2,f3,....fn = fields in the dataset***
-**** This application classifies company based on the values from the following field****
+****This application classifies company based on the values from the following field****
 **Work-life balance**
 **Ranking**
 **Cultural ratings**
