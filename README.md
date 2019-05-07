@@ -7,7 +7,7 @@
 **Dataset** has 17 fields where company and pros are the most important attribute for this search engine.
 ![](django_classify/dataset.png)
 
-## Code (Search Engine):
+***Code (Search Engine):***
 Removing the stop words from the data and converting all multiple white-space characters to single whitespace
 
                  
@@ -50,6 +50,27 @@ Naive Bayes is a machine learning algorithm for classification problems. It is b
 - Growth Opportunities ratings
 - Benefits rating
 - Senior Management
+
+
+***Code (Search Engine):***
+The function below counts the number of times a company occur in the dataset where name is the variable which is the name of the company for example : Google, Facebook, Netflix, Amazon
+
+     def count(name):
+        n_count = data['Company'][data['Company'] == name].count()
+        return n_count
+
+The function below takes the company name count by calling the count function then divide the count by the total number of rows in the dataset to get the Probability count of the company name
+    def P_count(name):
+        P_company = count(name) / n_rows
+        return P_company
+
+Following are the two main steps in the Naive Bayes Algorithm
+****Calculating mean*****
+
+    mean = data_means[col][data_var.index == name].values[0]
+****Calculating variance****
+ 
+     variance = data_var[col][data_var.index == name].values[0]
 
 
  ## Deployment:
