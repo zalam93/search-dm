@@ -29,7 +29,29 @@ Removing the stop words from the data and converting all multiple white-space ch
  Cosine Similarity Scores to retrieve the top similar results'
  
        sim_score = cosine_similarity(query_tfidf, train_tfidf)
-       
+ 
+# Classification
+
+Classification separates observations into groups based on their characteristics. For exampls, students applying to engineering schools could be separated into potential acceptance, maybe accepted, and unlikely expected based on grades, GRE scores, industrial experience, and outstanding activities.
+ 
+**Algorithm Used**
+***Multinomial Naive Bayes Classification:***
+Naive Bayes is a machine learning algorithm for classification problems. It is basically based on Bayes probability theorem. this algorithm is one of the simplier algorithm and fast to build models and it makes predictions with Naive Bayes algorithm.
+
+****Bayes’ Theorem is stated as:****
+
+***P(h|d) = (P(d|h) * P(h)) / P(d)***
+
+***f1,f2,f3,....fn = fields in the dataset***
+****This application classifies company based on the values from the following field****
+- Work-life balance
+- Ranking
+- Cultural ratings
+- Growth Opportunities ratings
+- Benefits rating
+- Senior Management
+
+
  ## Deployment:
 **Web Application Link** https://dmsearch.herokuapp.com/
 The application is hosted on free hosting site heroku, the deployment is straight forward deploying the site from the github repository but you might get some errors which I encounter when uploading the website on the heroku server.
@@ -60,27 +82,4 @@ https://github.com/Heetmadhu/Movie-Recommendation/blob/master/MovieSearch.ipynb
 https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html
 
 https://github.com/mohdkashif93/tf-idf-implementation
-
-# Classification
-
-Classification separates observations into groups based on their characteristics. For exampls, students applying to engineering schools could be separated into potential acceptance, maybe accepted, and unlikely expected based on grades, GRE scores, industrial experience, and outstanding activities.
- 
-**Algorithm Used**
-***Multinomial Naive Bayes Classification:***
-Naive Bayes is a machine learning algorithm for classification problems. It is basically based on Bayes probability theorem. this algorithm is one of the simplier algorithm and fast to build models and it makes predictions with Naive Bayes algorithm.
-
-****Bayes’ Theorem is stated as:****
-
-***P(h|d) = (P(d|h) * P(h)) / P(d)***
-
-***f1,f2,f3,....fn = fields in the dataset***
-****This application classifies company based on the values from the following field****
-- Work-life balance
-- Ranking
-- Cultural ratings
-- Growth Opportunities ratings
-- Benefits rating
-- Senior Management
-
-
 
