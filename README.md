@@ -75,6 +75,19 @@ Following are the two main steps in the Naive Bayes Algorithm
  P(X|Y): Probability of X given Y:
  
        p = 1 / (np.sqrt(2 * np.pi * vy)) * np.exp((-(x - my)**2) / (2 * vy))
+       
+****Formula for the Algorithm****:
+
+where name is the variable which represents the name of the company
+
+        result = P_count(name) * \
+            Px_given_Py(c0, calc_mean('Workload', name), calc_var('Rating', name)) * \
+            Px_given_Py(c1, calc_mean('Workload', name), calc_var('Workload', name)) * \
+            Px_given_Py(c2, calc_mean('Culture', name), calc_var('Culture', name)) * \
+            Px_given_Py(c3, calc_mean('Growth', name), calc_var('Growth', name)) * \
+            Px_given_Py(c4, calc_mean('Benefits', name), calc_var('Benefits', name)) * \
+            Px_given_Py(c5, calc_mean('Management', name), calc_var('Management', name))
+            
 
 
  ## Deployment:
