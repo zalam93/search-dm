@@ -75,12 +75,12 @@ Naive Bayes is a machine learning algorithm for classification problems. It is b
 
 ***f1,f2,f3,....fn = fields in the dataset***
 ****This application classifies company based on the values from the following field****
-**Work-life balance**
-**Ranking**
-**Cultural ratings**
-**Growth Opportunities ratings**
-**Benefits rating**
-**Senior Management**
+- Work-life balance
+- Ranking
+- Cultural ratings
+- Growth Opportunities ratings
+- Benefits rating
+- Senior Management
 
 
 
