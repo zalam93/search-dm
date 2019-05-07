@@ -52,7 +52,7 @@ Naive Bayes is a machine learning algorithm for classification problems. It is b
 - Senior Management
 
 
-***Code (Search Engine):***
+***Code (Classifier):***
 The function below counts the number of times a company occur in the dataset where name is the variable which is the name of the company for example : Google, Facebook, Netflix, Amazon
 
      def count(name):
