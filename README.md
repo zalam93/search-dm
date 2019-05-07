@@ -67,5 +67,17 @@ https://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.tex
 
 https://github.com/mohdkashif93/tf-idf-implementation
 
-# Classifier
+# Classification
+
+Classification separates observations into groups based on their characteristics. For exampls, students applying to engineering schools could be separated into potential acceptance, maybe accepted, and unlikely expected based on grades, GRE scores, industrial experience, and outstanding activities.
+
+**Algorithm Used**
+***Multinomial Naive Bayes Classification:***
+Naive Bayes is a machine learning algorithm for classification problems. It is basically based on Bayes probability theorem. this algorithm is one of the simplier algorithm and fast to build models and it makes predictions with Naive Bayes algorithm.
+
+****Bayes’ Theorem is stated as:****
+
+***P(h|d) = (P(d|h) * P(h)) / P(d)***
+
+
 
