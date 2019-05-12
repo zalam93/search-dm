@@ -9,6 +9,8 @@ from sklearn.feature_extraction.text import CountVectorizer
 from nltk.stem.snowball import SnowballStemmer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.metrics.pairwise import paired_cosine_distances
+from sklearn.metrics.pairwise import linear_kernel
 
 
 def index(query):
@@ -40,11 +42,13 @@ def index(query):
         query_tfidf = tfidf_transformer.transform(query_matrix)
         query_tfidf = query_tfidf.tocoo()
         sim_score = cosine_similarity(query_tfidf, train_tfidf)
+        tscore = np.sort(sim_score)
         sorted_indexes = np.argsort(sim_score).tolist()
         company_indexes = (dataset['Company'].iloc[sorted_indexes[0][-10:]].drop_duplicates()).tolist()
         num = len(company_indexes) * -1
-        sorted_scores = sorted_indexes[0][num:]
-        return company_indexes, sorted_scores, query_tfidf.data
+        tscore = tscore[0][num::]
+        sorted_indexes = sorted_indexes[0][num::]
+        return company_indexes, tscore, query_tfidf.data
     company, sorted_scores, query_tfidf = get_search_results(query)
     # scores = ','.join(str(i) for i in sorted_scores)
     '''scores = scores.split(',')
@@ -55,7 +59,6 @@ def index(query):
 
 
     }]'''
-    print(query_tfidf)
 
     return company, sorted_scores, query_tfidf
 
@@ -115,3 +118,22 @@ def index2(query):
                  'Netflix': netflix, 'Microsoft': microsoft, 'IBM': ibm, 'Deloitte': deloitte, 'AirBnb': airbnb}
 
     return str(max(companies.items(), key=operator.itemgetter(1))[0]).strip()
+
+
+def index3(query):
+    data = pd.read_csv('Forbes_Company.csv', low_memory=False)
+    tfidf = TfidfVectorizer(stop_words='english')
+    tfidf_matrix = tfidf.fit_transform(data['Sector'])
+    cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
+    indices = pd.Series(data.index, index=data['Company']).drop_duplicates()
+
+    def get_recommendations(title, cosine_sim=cosine_sim):
+        idx = indices[title]
+        sim_scores = list(enumerate(cosine_sim[idx]))
+        sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+        sim_scores = sim_scores[1:13]
+        movie_indices = [i[0] for i in sim_scores]
+        return data['Company'].iloc[movie_indices]
+
+    companies = get_recommendations(query)
+    return companies.values
