@@ -41,6 +41,7 @@ def index(query):
         query_tfidf = query_tfidf.tocoo()
         sim_score = cosine_similarity(query_tfidf, train_tfidf)
         sorted_indexes = np.argsort(sim_score).tolist()
+        sorted_indexes = sorted_indexes / (sorted_indexes.max(axis=0) + np.spacing(0))
         company_indexes = (dataset['Company'].iloc[sorted_indexes[0][-10:]].drop_duplicates()).tolist()
         num = len(company_indexes) * -1
         sorted_scores = sorted_indexes[0][num:]
