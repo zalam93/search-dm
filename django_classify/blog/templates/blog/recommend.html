@@ -1,0 +1,46 @@
+{% extends "blog/base.html" %}
+{% block content %}
+{% load static %}
+    <article class="media content-section">
+  <div class="media-body">
+
+    <h2><a class="article-title" href="#">Recommendation Implementation</a></h2>
+    <p class="article-content">This page contents the recommendation feature of the project (Content-Based)</p>
+  </div>
+</article>
+
+<div class="container">
+    <form method="POST" action="/recommend">
+        {% csrf_token %}
+          <div class="input-group mb-3">
+
+  <input type="text" name="query" class="form-control" placeholder="Search">
+  <div class="input-group-append">
+    <button class="btn btn-success" name="search" type="submit">Go</button>
+  </div>
+</div>
+</form>
+    </div>
+
+
+
+
+
+    <table class="table table-sm">
+  <thead>
+    <tr class=table-active>
+      <th scope="col">Recommend Companies</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for post in posts %}
+
+
+      <tr class=valign="middle">
+        <td align="center"><h4>{{post}} </h5></td>
+        {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock content%}
