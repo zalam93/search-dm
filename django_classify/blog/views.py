@@ -3,33 +3,37 @@ from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
 from django.template import Context
-# Create your views here.
 from utils.app import *
 
 
-'''posts = [
-
-    {
-        'Class': 'Data Mining Spring 2019',
-        'Title': 'Text Based Search',
-        'Content': 'Web Application on Job Search',
-        'Project': 'Dev Phase I'
-    }
-
-
-]'''
-
-
 def home(request):
+    return render(request, 'blog/home.html')
+
+
+def search(request):
 
     if request.method == 'POST':
         query = request.POST['query']
         company, scores, query_tfidf = index(query)
 
-        return render(request, 'blog/home.html', {'data': zip(company, scores)})
+        return render(request, 'blog/search.html', {'data': zip(company, scores)})
     else:
         form = UserCreationForm()
-    return render(request, 'blog/home.html')
+    return render(request, 'blog/search.html')
+
+
+def recommend(request):
+
+    if request.method == 'POST':
+        query = request.POST['query']
+        companies = index3(query)
+        context = {
+            'posts': companies
+        }
+        return render(request, 'blog/recommend.html', context)
+    else:
+        form = UserCreationForm()
+    return render(request, 'blog/recommend.html')
 
 
 def classify(request):
