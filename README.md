@@ -88,6 +88,37 @@ where name is the variable which represents the name of the company
             Px_given_Py(c4, calc_mean('Benefits', name), calc_var('Benefits', name)) * \
             Px_given_Py(c5, calc_mean('Management', name), calc_var('Management', name))
             
+# Recommendation System:
+A recommender system or a recommendation system is a subclass of information filtering system that seeks to predict the "rating" or "preference" a user would give to an item. There are two types of recommendation systems 1) Content Based Filtering 2) Collaborative filtering. In this project I have used Content Based Filtering
+
+***Code (Recommendation):***
+
+Defining a TF-IDF Vectorizer Object and to Remove all english stop words
+
+      tfidf = TfidfVectorizer(stop_words='english')
+      
+ Constructing the required TF-IDF matrix by fitting and transforming the data on the Sector field.
+ 
+          tfidf_matrix = tfidf.fit_transform(data['Sector'])
+
+ Calculating the cosine similarity
+       
+        cosine_sim = linear_kernel(tfidf_matrix, tfidf_matrix)
+ 
+ Construct a reverse map of indices and company names
+      
+        indices = pd.Series(data.index, index=data['Company']).drop_duplicates()
+ 
+ Function Call
+  
+        def get_recommendations(title, cosine_sim=cosine_sim):
+          idx = indices[title]
+          sim_scores = list(enumerate(cosine_sim[idx]))
+          sim_scores = sorted(sim_scores, key=lambda x: x[1], reverse=True)
+          sim_scores = sim_scores[1:13]
+          movie_indices = [i[0] for i in sim_scores]
+          return data['Company'].iloc[movie_indices]
+
 
 
  ## Deployment:
@@ -120,4 +151,5 @@ After uploading the web also check if you web dyno is set or not if not you need
 - https://www.kaggle.com/ash316/ml-from-scratch-part-2
 - https://towardsdatascience.com/na%C3%AFve-bayes-from-scratch-using-python-only-no-fancy-frameworks-a1904b37222d
 - https://chrisalbon.com/machine_learning/naive_bayes/naive_bayes_classifier_from_scratch/
+ - https://www.datacamp.com/community/tutorials/recommender-systems-python
 
